@@ -5,7 +5,28 @@ input = sys.stdin.readline
 
 N = int(input())
 
+def queen():
+    global result
+    if len(arr) == N:
+        result += 1
+        return
+    
+    for n in range(N):
+        if flag[n] == False:
+            continue
+        flag[n] = False
+        arr.append(n)
+        
 
+flag = [True] * N
+arr = []
+result = 0
+queen()
+
+print(flag)
+
+
+'''
 def queen():
     global result
 
@@ -30,12 +51,7 @@ def queen():
                 queen()
                 arr.pop()
 
-arr = []
-result = 0
-queen()
 
-print(result)
-'''
 대각선: n-1, n-1
       n+1, n-1
       n-1, n+1
